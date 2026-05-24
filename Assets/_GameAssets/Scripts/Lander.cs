@@ -11,19 +11,19 @@ public class Lander : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (Keyboard.current.upArrowKey.isPressed)
+        if (Keyboard.current.upArrowKey.isPressed || Keyboard.current.wKey.isPressed)
         {
             float force = 700f;
             _landerRigidBody2D.AddForce(force * transform.up*Time.deltaTime);
             
         }
-        if (Keyboard.current.rightArrowKey.isPressed)
+        if (Keyboard.current.rightArrowKey.isPressed || Keyboard.current.dKey.isPressed)
         {
             float turnSpeed = -100f;
             _landerRigidBody2D.AddTorque(turnSpeed * Time.deltaTime);
             
         }
-        if (Keyboard.current.leftArrowKey.isPressed)
+        if (Keyboard.current.leftArrowKey.isPressed || Keyboard.current.aKey.isPressed)
         {
             float turnSpeed = 100f;
             _landerRigidBody2D.AddTorque(turnSpeed * Time.deltaTime);
