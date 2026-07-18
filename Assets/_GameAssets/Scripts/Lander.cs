@@ -30,4 +30,25 @@ public class Lander : MonoBehaviour
            
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision2D)
+    {
+        if (collision2D.relativeVelocity.magnitude >= 3)
+        {
+            Debug.Log("Sert Ýniþ");
+        }
+        float dotVector = Vector2.Dot(Vector2.up, transform.up);
+        float minDotVector = 0.90f;
+
+        if (dotVector < minDotVector)
+        {
+            Debug.Log("Uzay Aracý Dik açýyla iniþ yaptý");
+        }
+
+        if (collision2D.relativeVelocity.magnitude < 3)
+        {
+            Debug.Log("Yumuþak Ýniþ");
+        }
+
+    }
 }
